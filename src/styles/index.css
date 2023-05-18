@@ -1,0 +1,239 @@
+/* 
+    box-sizing default is content-box
+        content-box means:
+            when we set the width/height of an element
+            we are setting the width/height of the content ONLY
+        border-box means:
+            we are setting the width/height of the content, padding, AND border all at once
+
+    BOX-MODEL
+        every element has 4 "layers"
+        going from the inside to outside
+        content -> padding -> border -> margin
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+.desktop {
+  display: none;
+}
+
+html {
+  font-size: 12px;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 
+  sans- (without)
+
+  monospace: every character has the same width
+      .W.W
+
+  
+*/
+
+header {
+  /* temporary */
+  background-color: lightblue;
+  /*
+      flex-grow: 1 if allowed to grow, 0 if not
+      flex-shrink: 1 if allowed to shrink, 0 if not
+      flex-basis: width (height if flex-direction: column)
+
+      flex: flex-grow flex-shrink flex-basis;
+  */
+  flex-grow: 0;
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+#wrapper {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+main {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+}
+
+.dropdown:hover>.dropdown-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+nav.mobile {
+  position: relative;
+}
+
+nav.mobile h3 {
+  margin: 0;
+  padding: 2em;
+}
+
+/*
+  CSS Units
+  `````````
+  %   =   relative to the parent
+  rem =   relative to the root font-size   
+  em  =   relative to the element font-size
+*/
+
+
+.mobile-nav-links {
+  display: none;
+  position: absolute;
+
+  background-color: white;
+  outline: 1px solid gray;
+
+  padding: 2em;
+
+  flex-direction: column;
+}
+
+nav.mobile:hover .mobile-nav-links {
+  display: flex;
+}
+
+nav.desktop {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav.desktop a {
+  display: inline-block;
+  padding: 2em;
+}
+
+nav.desktop a {
+  text-decoration: none;
+  font-weight: 900;
+}
+
+nav.desktop a:hover {
+  background-color: rgba(0, 0, 0, .1);
+}
+
+section.outer {
+  width: 100%;
+}
+
+section.inner {
+  margin: auto;
+  width: 1200px;
+  max-width: 87%;
+}
+
+.section-1 {
+  background: orange;
+}
+
+.skills {}
+
+.skills figure {
+  display: inline-block;
+}
+
+footer {
+  background-color: brown;
+  text-align: center;
+  padding: 10px;
+}
+
+#chatButtonId {
+  transform: translateX(34%) rotate(-90deg);
+  position: fixed;
+  right: 0px;
+  top: 50%;
+}
+
+#chatButtonId>button {
+  cursor: pointer;
+  background-color: rgb(255, 117, 5);
+  color: white;
+  /* width:200px; */
+  /* height:200px; */
+  /* margin:0px auto; */
+  /* top:200px; */
+  padding: 10px;
+  /* position: absolute; */
+  border: none;
+}
+
+.projects {
+  /* width: 500px;
+  max-width: 100%;
+  margin: auto; */
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+/*  */
+
+@media screen and (min-width: 640px) {
+  .desktop {
+    display: block;
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  section.inner {
+    max-width: 75%;
+  }
+
+  #chatButtonId {
+    transform: unset;
+    right: 0;
+    top: unset;
+    bottom: 115px;
+  }
+
+  /* #chat>button { */
+  #chatButtonId .chat-button {
+    background-image: url("images/chat_desktop100x107.png");
+    background-repeat: no-repeat, repeat;
+    width: 100px;
+    height: 107px;
+    /* border-radius: 32px; */
+    max-width: 370px;
+    background-color: unset;
+  }
+
+  #chatButtonId span {
+    display: none;
+  }
+}

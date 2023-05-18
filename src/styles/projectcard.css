@@ -1,0 +1,36 @@
+.project-card {
+    border: 2px solid salmon;
+    background-color: #fff;
+    padding: 10px;
+
+}
+
+
+.five-images-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    /* display: flex;
+    flex-wrap: wrap; */
+}
+
+.techicon {
+    border: 2px solid salmon;
+    display: inline-block;
+    padding: 10px;
+}
+
+
+.techicon img {
+    /* width: 50px;
+    height: 50px; */
+    width: 100%;
+    display: block;
+}
+
+@media screen and (min-width: 640px) {
+    .five-images-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+}
