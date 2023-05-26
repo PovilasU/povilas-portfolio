@@ -71,6 +71,15 @@ const Home = () => {
     */
 
 
+    const hi = () => {
+        console.log("Hello");
+    }
+
+    const callbk = ()=>{
+        console.log("do something");
+    }
+
+
     return (
         <>
             <div>

@@ -95,12 +95,94 @@ main {
 
 nav.mobile {
   position: relative;
+  background-color: #000;
 }
 
 nav.mobile h3 {
   margin: 0;
   padding: 2em;
 }
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1.5rem;
+  padding-top: 3.125rem;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+}
+
+.mobileMenuBtn {
+  z-index: 2;
+  position: absolute;
+  right: 0px;
+  color: #fff;
+  background-color: #000;
+  border: #000;
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 0.9rem;
+
+}
+
+/*
+  nav.mobile > button {}
+  rem = relative to the html font size
+  em = relative to the inherited font size
+*/
+
+.mobileLink {
+  padding: 20px;
+  font-size: 2rem;
+  font-weight: 700;
+  /* align-items: center; */
+}
+
+.mobileLink a {
+  text-decoration: none;
+  color: white;
+}
+
+/* menu icon */
+/* -----
+SVG Icons - svgicons.sparkk.fr
+----- */
+
+.svg-icon {
+  width: 1em;
+  height: 1em;
+}
+
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+  fill: #fff;
+}
+
+.svg-icon circle {
+  stroke: #fff;
+  stroke-width: 1;
+}
+
+.svg-icon {
+  width: 1em;
+  height: 1em;
+}
+
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+  fill: #fff;
+}
+
+.svg-icon circle {
+  stroke: #fff;
+  stroke-width: 1;
+}
+
+/* ./menu icon */
 
 /*
   CSS Units
@@ -127,10 +209,10 @@ nav.mobile:hover .mobile-nav-links {
   display: flex;
 }
 
-nav.desktop {
+/* nav.desktop {
   display: flex;
   justify-content: space-between;
-}
+} */
 
 nav.desktop a {
   display: inline-block;
