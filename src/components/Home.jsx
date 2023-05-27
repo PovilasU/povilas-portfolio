@@ -45,7 +45,9 @@ const Home = () => {
         () => x
     */
 
-    const filterProjects = catName => projects.filter(project => project.category == catName)
+    const filterProjects = catName => projects.filter(project => {
+        return project.category == catName || catName === true
+    })
     const [cat, setCat] = useState(filterProjects(categories[0]));
 
     /*
@@ -75,7 +77,7 @@ const Home = () => {
         console.log("Hello");
     }
 
-    const callbk = ()=>{
+    const callbk = () => {
         console.log("do something");
     }
 
@@ -84,7 +86,7 @@ const Home = () => {
         <>
             <div>
                 {categories.map((category, i) => (
-                    <button key={i} onClick={() => { setCat(filterProjects(category)) }}>
+                    <button key={`${category}${i}`} onClick={() => { setCat(filterProjects(category)) }}>
                         {typeof category == 'string' ? category : 'all'}
                     </button>
                 ))}
@@ -93,7 +95,7 @@ const Home = () => {
             <div className="projects">
                 {cat.map((project) => {
                     return (
-                        <ProjectCard key={project} project={project} />
+                        <ProjectCard key={project.header} project={project} />
                     )
 
                 })}
